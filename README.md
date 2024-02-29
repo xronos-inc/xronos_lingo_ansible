@@ -33,6 +33,6 @@ Remote system:
   hosts: myhosts
   gather_facts: true
   roles:
-    - name: xronos_lfc_ansible
-      role: xronos_lfc_ansible
+    - name: xronos_lingo_ansible
+      role: xronos_lingo_ansible
 ```
