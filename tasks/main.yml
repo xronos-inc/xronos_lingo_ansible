@@ -21,9 +21,9 @@
     action: latest_release
   register: lingo_release
 
-- name: Create cache folder /var/cache/lf-lang
+- name: Create cache folder "{{ ansible_env.HOME }}/.cache"/lf-lang
   ansible.builtin.file:
-    path: /var/cache/lf-lang
+    path: "{{ ansible_env.HOME }}/.cache/lf-lang"
     state: directory
     owner: "{{ ansible_user }}"
     group: "{{ ansible_user }}"
@@ -32,7 +32,7 @@
 - name: Git clone lf-lang/lingo tag {{ lingo_release.tag }}
   ansible.builtin.git:
     repo: "https://github.com/lf-lang/lingo"
-    dest: /var/cache/lf-lang/lingo
+    dest: "{{ ansible_env.HOME }}/.cache/lf-lang/lingo"
     version: "{{ lingo_release.tag }}"
     single_branch: true
     force: true
@@ -46,5 +46,5 @@
 
 - name: Install lingo
   ansible.builtin.command:
-    cmd: "{{ ansible_env.HOME }}/.cargo/bin/cargo install --path /var/cache/lf-lang/lingo"
+    cmd: "{{ ansible_env.HOME }}/.cargo/bin/cargo install --path {{ ansible_env.HOME }}/.cache/lf-lang/lingo"
     creates: "{{ ansible_env.HOME }}/.cargo/bin/lingo"
