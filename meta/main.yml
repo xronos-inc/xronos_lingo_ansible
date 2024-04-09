@@ -5,7 +5,7 @@ galaxy_info:
   role_name: "xronos_lingo_ansible"
   company: Xronos Inc.
   description: "Install Lingo package management tool for Lingua Franca"
-  license: BSD-3
+  license: BSD-3-Clause
   platforms:
     - name: Ubuntu
       versions:
