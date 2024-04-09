@@ -1,9 +1,11 @@
+# SPDX-FileCopyrightText: © 2024 Xronos Inc.
+# SPDX-License-Identifier: BSD-3-Clause
 ---
 galaxy_info:
   role_name: "xronos_lingo_ansible"
-  author: Xronos, Inc.
+  company: Xronos Inc.
   description: "Install Lingo package management tool for Lingua Franca"
-  license: proprietary
+  license: BSD-3-Clause
   platforms:
     - name: Ubuntu
       versions:
